@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Finanças</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Econômico.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <style>
+      .jumbotron.header{
+        color: white;
+        background-image: linear-gradient(SpringGreen, #0c605f);
+        padding-top: 1px;
+        padding-bottom: 20px;
+
+
+      }
+
+      .kontribusi{
+        background-color: dark;
+        border-radius: 10px;
+        margin:0 10px 0 10px;
+      }
+
+      .myContainer{
+        background: dark;
+        color: #FFF;
+        padding-left: 75px;
+        padding-right: 75px;
+      }
+
+      .formContainer{
+
+        color: white;
+        padding-left: 550px ;
+        padding-right: 550px ;
+      }
+
+      h1{
+        font-size: 60 px;
+        color: #363636;
+        -webkit-text-stroke-width: 1px; /* largura da borda */
+        -webkit-text-stroke-color: black; /* cor da borda */
+      }
+
+      h2{
+        font-size: 24px;
+        color: white;
+        -webkit-text-stroke-width: 1px; /* largura da borda */
+        -webkit-text-stroke-color: white; /* cor da borda */
+      }
+      h3{
+        font-size: 24px;
+        color:white;
+        background-color:#212529;
+      }
+      h5{
+        text-align: left;
+      }
+
+  </style>
+
+  <div class="jumbotron header text-center">
+      <img alt="logo" src="media/logo.png" width="300px" height="220px">
+
+      <p style="font-size: 20px ">Obtenha dados econômicos de uma maneira simples e funcional.</p>
+  </div>
+
+</head>
+<body style="background-color: #0c605f;  ">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
+">
+
+    <div  class="container-fluid ">
+
+        <div class="formContainer">
+
+            <center><h2>Preço de Ações listadas no IBOVESPA</h2></center><br>
+
+            <form action="submit", method="POST">{% csrf_token %}
+                <div class="form-group">
+
+                    <select class="form-control" id="empresa" name="empresa">
+                        <option value="" disabled selected>Escolha uma Empresa</option>
+                        <option value="ALZR11">Alianza Trust Renda Imobiliaria Fundo Investimento Imobiliario</option>
+                        <option value="ABEV3">Ambev S.A.</option>
+                        <option value="ARZZ3">Arezzo Indústria e Comércio S.A.</option>
+                        <option value="AZUL4">Azul S.A.</option>
+                        <option value="BTOW3">B2W - Companhia Digital</option>
+                        <option value="B3SA3">B3 S.A. - Brasil, Bolsa, Balcão</option>
+                        <option value="BBDC3">Banco Bradesco S.A.</option>
+                        <option value="BBDC4">Banco Bradesco S.A.</option>
+                        <option value="BBAS3">Banco do Brasil S.A</option>
+                        <option value="BRSR6">Banco do Estado do Rio Grande do Sul S.A.</option>
+                        <option value="BIDI4">Banco Inter S.A.</option>
+                        <option value="BIDI3">Banco Inter S.A.</option>
+                        <option value="SANB3">Banco Santander (Brasil) S.A.</option>
+                        <option value="SANB11">Banco Santander (Brasil) S.A.</option>
+                        <option value="BBPO11">BB Progressivo II Fundo de Investimento Imobiliario - FII</option>
+                        <option value="BBSE3">BB Seguridade Participações S.A.</option>
+                        <option value="BRML3">BR Malls Participações S.A.</option>
+                        <option value="BRAP4">Bradespar S.A.</option>
+                        <option value="BRAP3">Bradespar S.A.</option>
+                        <option value="BRKM5">Braskem S.A.</option>
+                        <option value="BRKM3">Braskem S.A.</option>
+                        <option value="BRFS3">BRF S.A.</option>
+                        <option value="CAML3">Camil Alimentos S.A.</option>
+                        <option value="CCRO3">CCR S.A.</option>
+                        <option value="ELET3">Centrais Elétricas Brasileiras S.A. - Eletrobras</option>
+                        <option value="ELET6">Centrais Elétricas Brasileiras S.A. - Eletrobras</option>
+                        <option value="HGTX3">Cia. Hering</option>
+                        <option value="CIEL3">Cielo S.A.</option>
+                        <option value="COGN3">Cogna Educação S.A.</option>
+                        <option value="PCAR4">Companhia Brasileira de Distribuição</option>
+                        <option value="LCAM3">Companhia de Locação das Américas</option>
+                        <option value="SBSP3">Companhia de Saneamento Básico do Estado de São Paulo - SABESP</option>
+                        <option value="CMIG3">Companhia Energética de Minas Gerais</option>
+                        <option value="CMIG4">Companhia Energética de Minas Gerais</option>
+                        <option value="CPLE6">Companhia Paranaense de Energia - COPEL</option>
+                        <option value="CPLE3">Companhia Paranaense de Energia - COPEL</option>
+                        <option value="CSNA3">Companhia Siderúrgica Nacional</option>
+                        <option value="CSAN3">Cosan S.A.</option>
+                        <option value="CPFE3">CPFL Energia S.A.</option>
+                        <option value="HGLG11">CSHG Logistica - Fundo De Investimento Imobiliario</option>
+                        <option value="CVCB3">CVC Brasil Operadora e Agência de Viagens S.A.</option>
+                        <option value="CYRE3">Cyrela Brazil Realty S.A. Empreendimentos e Participações</option>
+                        <option value="ECOR3">EcoRodovias Infraestrutura e Logística S.A.</option>
+                        <option value="ENBR3">EDP - Energias do Brasil S.A.</option>
+                        <option value="EMBR3">Embraer S.A.</option>
+                        <option value="EGIE3">Engie Brasil Energia S.A.</option>
+                        <option value="EQTL3">Equatorial Energia S.A.</option>
+                        <option value="YDUQ3">Estácio Participações S.A.</option>
+                        <option value="HTMX11">FD Invest Imob Hotel Maxinvest</option>
+                        <option value="FLRY3">Fleury S.A.</option>
+                        <option value="BPFF11">Fundo de Investimento Imobiliario - FII Brasil Plural Absoluto Fundo de Fundos</option>
+                        <option value="RBRP11">Fundo Investimento Imobiliario Rbr Properties Fii</option>
+                        <option value="GGBR3">Gerdau S.A.</option>
+                        <option value="GGBR4">Gerdau S.A.</option>
+                        <option value="GOLL4">Gol Linhas Aéreas Inteligentes S.A.</option>
+                        <option value="GRND3">Grendene S.A.</option>
+                        <option value="GMAT3">Grupo Mateus S.A.</option>
+                        <option value="HGBS11">HEDGE Brasil Shopping Fundo de Investimento Imobiliario</option>
+                        <option value="HBOR3">Helbor Empreendimentos S.A.</option>
+                        <option value="HYPE3">Hypera S.A.</option>
+                        <option value="IGTA3">Iguatemi Empresa de Shopping Centers S.A.</option>
+                        <option value="MEAL3">International Meal Company Alimentacao S.A.</option>
+                        <option value="MYPK3">Iochpe-Maxion S.A.</option>
+                        <option value="IRBR3">IRB-Brasil Resseguros S.A.</option>
+                        <option value="BOVA11">iShares Ibovespa Fundo de Índice ETF</option>
+                        <option value="IVVB11">iShares S&P 500 Fundo de Investimento - Investimento No Exterior</option>
+                        <option value="ITUB4">Itaú Unibanco Holding S.A.</option>
+                        <option value="ITUB3">Itaú Unibanco Holding S.A.</option>
+                        <option value="ITSA4">Itaúsa - Investimentos Itaú S.A.</option>
+                        <option value="ITSA3">Itaúsa - Investimentos Itaú S.A.</option>
+                        <option value="JBSS3">JBS S.A.</option>
+                        <option value="JHSF3">JHSF Participacoes S.A.</option>
+                        <option value="KLBN11">KLABIN S/A UNT N2</option>
+                        <option value="RENT3">Localiza Rent a Car S.A.</option>
+                        <option value="LAME4">Lojas Americanas S.A.</option>
+                        <option value="LREN3">Lojas Renner S.A.</option>
+                        <option value="MDIA3">M. Dias Branco S.A. Indústria e Comércio de Alimentos</option>
+                        <option value="MGLU3">Magazine Luiza S.A.</option>
+                        <option value="MRFG3">Marfrig Global Foods S.A.</option>
+                        <option value="MXRF11">Maxi Renda Fundo De Investimento Imobiliaro - FII</option>
+                        <option value="MFII11">Merito Desenvolvimento Imobiliario I FII - Fundo de Investimento Imobiliario</option>
+                        <option value="GOAU4">Metalurgica Gerdau S.A.</option>
+                        <option value="MILS3">Mills Estruturas e Servicos de Engenharia S.A.</option>
+                        <option value="MOVI3">Movida Participacoes S.A.</option>
+                        <option value="MRVE3">MRV Engenharia e Participações S.A.</option>
+                        <option value="MULT3">Multiplan Empreendimentos Imobiliários S.A.</option>
+                        <option value="NTCO3">Natura &Co Holding S.A.</option>
+                        <option value="NATU3">Natura Cosméticos S.A.</option>
+                        <option value="OIBR3">Oi S.A.</option>
+                        <option value="BRDT3">Petrobras Distribuidora S.A.</option>
+                        <option value="PETR4">Petróleo Brasileiro S.A. - Petrobras</option>
+                        <option value="PETR3">Petróleo Brasileiro S.A. - Petrobras</option>
+                        <option value="PSSA3">Porto Seguro S.A.</option>
+                        <option value="QUAL3">Qualicorp Consultoria e Corretora de Seguros S.A.</option>
+                        <option value="RADL3">Raia Drogasil S.A.</option>
+                        <option value="RAIL3">Rumo S.A.</option>
+                        <option value="SQIA3">Sinqia S.A.</option>
+                        <option value="SMLS3">Smiles Fidelidade S.A.</option>
+                        <option value="SUZB3">Suzano S.A.</option>
+                        <option value="TASA4">Taurus Armas S.A.</option>
+                        <option value="TCSA3">Tecnisa S.A.</option>
+                        <option value="VIVT4">Telefônica Brasil S.A.</option>
+                        <option value="TIMP3">TIM Participações S.A.</option>
+                        <option value="TOTS3">TOTVS S.A.</option>
+                        <option value="TAEE11">Transmissora Aliança de Energia Elétrica S.A.</option>
+                        <option value="UGPA3">Ultrapar Participações S.A.</option>
+                        <option value="USIM5">Usinas Siderúrgicas de Minas Gerais S.A.</option>
+                        <option value="VALE3">Vale S.A.</option>
+                        <option value="VLID3">Valid Solucoes S.A.</option>
+                        <option value="VVAR3">Via Varejo S.A.</option>
+                        <option value="VILG11">Vinci Logistica Fundo Investimento Imobiliario FII</option>
+                        <option value="VIVA3">Vivara Participacoes S.A.</option>
+                        <option value="WEGE3">WEG S.A.</option>
+                        <option value="WIZS3">Wiz Solucoes e Corretagem de Seguros S.A.</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-dark btn-block">Buscar</button>
+
+                </div>
+            </form>
+
+        </div>
+
+        <br>
+    </div>
+
+        <div style="backgroung-color: white" class="myContainer">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+
+                <tr>
+                    <th><h6> Nome da Empresa </h6></th>
+                    <th><h6> Região de Operação da Bolsa </h6></th>
+                    <th><h6> Moeda Base </h6></th>
+                    <th><h6> Valor de Mercado </h6></th>
+                    <th><h6> Preço por Ação </h6></th>
+                    <th><h6> Percentual de Mudança do Dia </h6></th>
+                    <th><h6> Última Atualização </h6></th>
+
+                </tr>
+
+                <tr class="table-light">
+                    <td>{{ acoes.name }}</td>
+                    <td>{{ acoes.region }}</td>
+                    <td>{{ acoes.currency }}</td>
+                    <td>R$ {{ acoes.market_cap }}</td>
+                    <td>R$ {{ acoes.price }}</td>
+                    <td>{{ acoes.change_percent }} %</td>
+                    <td>{{ acoes.updated_at }}</td>
+                </tr>
+
+            </table>
+        </div>
+
+    <div class="container-fluid">
+        <center><h2>Cotações de Moedas</h2><br></center>
+        <div class="row justify-content-md-center ">
+
+            <div class="card bg-light mb-3" style="width:20rem; max-width: 25rem; border-radius: 10px; margin:0 13px 0 13px;">
+              <div class="card-header"><h5>Dollar</h5></div>
+                  <div class="card-body">
+                    <!-- <h5 class="card-title">Light card title</h5> -->
+                    <p class="card-text">   <b>Compra</b> . . . . . . . . . . . . . . R$ {{ quotationsUSD.buy }}<br>
+                                            <b>Venda</b> . . . . . . . . . . . . . . . . R$ {{ quotationsUSD.sell }}<br>
+                                            <b>Variação</b> . . . . . . . . . . . . . {{ quotationsUSD.variation }} %</p>
+                  </div>
+            </div>
+
+            <div class="card text-white bg-dark mb-3" style="width:20rem; max-width: 25rem; border-radius: 10px; margin:0 13px 0 13px;">
+              <div class="card-header"><h5>Euro</h5></div>
+                  <div class="card-body">
+                    <!-- <h5 class="card-title">Dark card title</h5> -->
+                    <p class="card-text">   <b>Compra</b> . . . . . . . . . . . . . . R$ {{ quotationsEUR.buy }}<br>
+                                            <b>Venda</b> . . . . . . . . . . . . . . . . R$ {{ quotationsEUR.sell }}<br>
+                                            <b>Variação</b> . . . . . . . . . . . . . {{ quotationsEUR.variation }} %</p>
+                  </div>
+            </div>
+
+            <div class="card bg-light mb-3" style="width:20rem; max-width: 25rem; border-radius: 10px; margin:0 13px 0 13px;">
+              <div class="card-header"><h5>Pound Sterling</h5></div>
+                  <div class="card-body">
+                    <!-- <h5 class="card-title">Light card title</h5> -->
+                    <p class="card-text">   <b>Compra</b> . . . . . . . . . . . . . . R$ {{ quotationsGBP.buy }}<br>
+                                            <b>Venda</b> . . . . . . . . . . . . . . . . R$ {{ quotationsGBP.sell }}<br>
+                                            <b>Variação</b> . . . . . . . . . . . . . {{ quotationsGBP.variation }} %</p>
+                  </div>
+            </div>
+
+            <div class="card text-white bg-dark mb-3" style="width:20rem; max-width: 25rem; border-radius: 10px; margin:0 13px 0 13px;">
+              <div class="card-header"><h5>Bitcoin</h5></div>
+                  <div class="card-body">
+                    <!-- <h5 class="card-title">Dark card title</h5> -->
+                    <p class="card-text">   <b>Compra</b> . . . . . . . . . . . . . . R$ {{ quotationsBTC.buy }}<br>
+                                            <b>Venda</b> . . . . . . . . . . . . . . . . R$ {{ quotationsBTC.sell }}<br>
+                                            <b>Variação</b> . . . . . . . . . . . . . {{ quotationsBTC.variation }} %</p>
+                  </div>
+            </div>
+
+            <div class="card bg-light mb-3" style="width:20rem; max-width: 25rem; border-radius: 10px; margin:0 13px 0 13px;">
+              <div class="card-header"><h5>Argentine Peso</h5></div>
+                  <div class="card-body">
+                    <!-- <h5 class="card-title">Light card title</h5> -->
+                    <p class="card-text">   <b>Compra</b> . . . . . . . . . . . . . . R$ {{ quotationsARS.buy }}<br>
+                                            <b>Venda</b> . . . . . . . . . . . . . . . . R$ {{ quotationsARS.sell }}<br>
+                                            <b>Variação</b> . . . . . . . . . . . . . {{ quotationsARS.variation }} %</p>
+                  </div>
+            </div>
+
+        </div>
+
+    </div>
+
+<!--
+    <div class="container-fluid text-center">
+        <center><h2>Cotações de Moedas</h2><br></center>
+      <div class="row justify-content-center">
+        <div class="kontribusi col-sm-2 col-sm-offset-1">
+          <div class="card card-block text-xs-center">
+            <h3 class="card-title">Dollar</h3>
+            <p class="card-text"><b>Compra: </b> R$ {{ quotationsUSD.buy }}<br> <b>Venda: </b> R$ {{ quotationsUSD.sell }}<br> <b>Variação: </b> {{ quotationsUSD.variation }} %</p>
+          </div>
+        </div>
+        <div class="kontribusi col-sm-2">
+          <div class="card card-block text-xs-center">
+            <h3 class="card-title"> Euro </h3>
+            <p class="card-text"><b> Compra: </b> R$ {{ quotationsEUR.buy }}<br><b> Venda: </b> R$ {{ quotationsEUR.sell }}<br> <b>Variação: </b> {{ quotationsEUR.variation }} %</p>
+          </div>
+        </div>
+        <div class="kontribusi col-sm-2">
+          <div class="card card-block text-xs-center">
+            <h3 class="card-title"> Pound Sterling </h3>
+            <p class="card-text"><b>Compra: </b> R$ {{ quotationsGBP.buy }}<br> <b>Venda: </b> R$ {{ quotationsGBP.sell }}<br> <b>Variação: </b> {{ quotationsGBP.variation }} %</p>
+          </div>
+        </div>
+        <div class="kontribusi col-sm-2">
+          <div class="card card-block text-xs-center">
+            <h3 class="card-title"> Bitcoin </h3>
+            <p class="card-text"><b>Compra: </b> R$ {{ quotationsBTC.buy }}<br> <b>Venda: </b> R$ {{ quotationsBTC.sell }}<br> <b>Variação: </b> {{ quotationsBTC.variation }} %</p>
+          </div>
+        </div>
+        <div class="kontribusi col-sm-2">
+          <div class="card card-block text-xs-center" >
+            <h3 class="card-title"> Argentine Peso </h3>
+            <p class="card-text"><b>Compra: </b> R$ {{ quotationsARS.buy }}<br> <b>Venda: </b> R$ {{ quotationsARS.sell }}<br> <b>Variação: </b> {{ quotationsARS.variation }} %</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<br>
+-->
+
+    <div class="container">
+        <table style="background-color: white; " class="table table-bordered">
+            <thead class="thead-dark">
+
+                <center><h2>Taxas de Juros do Brasil</h2></center><br>
+
+                <tr class="th">
+                    <th style="color: white;">Data</th>
+                    <th style="color: white;">CDI</th>
+                    <th style="color: white;">Selic</th>
+                    <th style="color: white;">Fator Diário</th>
+                    <th style="color: white;">Taxa Selic Diária</th>
+                    <th style="color: white;">Taxa CDI Diária</th>
+                </tr>
+
+                {% for taxe in taxes %}
+
+                <tr>
+                    <td>{{ taxe.date }}</td>
+                    <td>{{ taxe.cdi }} %</td>
+                    <td>{{ taxe.selic }} %</td>
+                    <td>{{ taxe.daily_factor }} %</td>
+                    <td>{{ taxe.selic_daily }} %</td>
+                    <td>{{ taxe.cdi_daily }} %</td>
+                </tr>
+
+                {% endfor %}
+
+        </table>
+    </div>
+
+<br>
+
