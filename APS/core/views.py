@@ -17,7 +17,7 @@ def empresaCode(request):
 
     print(parametroEmpresa)
 
-    return redirect('http://localhost:8000/')
+    return redirect('https://git.heroku.com/app-aps.git')
 
 class main_finance(TemplateView):
     template_name = 'main.html'
